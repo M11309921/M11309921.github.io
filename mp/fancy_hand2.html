@@ -295,17 +295,30 @@
     function drawAllPoints(hand, gx, gy) {
       hand.keypoints.forEach((k, idx) => {
         let x = map(k.x, 0, 640, 0, width) + gx, y = map(k.y, 0, 480, 0, height) + gy;
-        // 每個點不同顏色，並且放大 (Size = 16)
-        let r = (idx * 45) % 255;
-        let g = (220 - idx * 10) % 255;
-        let b = (120 + idx * 20) % 255;
-        fill(r, g, b);
+
+        // 使用 time 和 index 產生特殊的動態霓虹色彩波動
+        let t = frameCount * 0.05 + idx * 0.3;
+        let r = map(sin(t), -1, 1, 50, 255);
+        let g = map(sin(t + 2), -1, 1, 100, 255);
+        let b = map(sin(t + 4), -1, 1, 150, 255);
+
+        // 外層螢光暈
+        fill(r, g, b, 80);
         noStroke();
-        circle(x, y, 16);
-        // 保留指尖的標籤與外框
+        circle(x, y, 24);
+
+        // 核心亮點
+        fill(r, g, b);
+        circle(x, y, 14);
+
+        // 珍珠高光
+        fill(255, 255, 255, 200);
+        circle(x - 3, y - 3, 5);
+
+        // 保留指尖的標籤與外框，也套用新色彩
         if ([4, 8, 12, 16, 20].includes(idx)) {
-          noFill(); stroke(255, 180); circle(x, y, 26);
-          fill(255, 150); noStroke(); textSize(9); text(`ID:${idx}`, x + 15, y - 10);
+          noFill(); stroke(r, g, b, 200); circle(x, y, 34);
+          fill(255, 180); noStroke(); textSize(10); text(`ID:${idx}`, x + 18, y - 12);
         }
       });
     }
