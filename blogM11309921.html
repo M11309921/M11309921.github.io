@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【台北探店】師大夜市大變身 - 科技感部落格</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#050505',
+                            dark: '#0f172a',
+                            accent: '#38bdf8',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            glass: 'rgba(15, 23, 42, 0.7)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px rgba(56, 189, 248, 0.2)' },
+                            '100%': { boxShadow: '0 0 20px rgba(56, 189, 248, 0.6)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .glass-morphism {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #38bdf8, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        .line-accent {
+            width: 4px;
+            background: linear-gradient(to bottom, #38bdf8, transparent);
+        }
+        ::selection {
+            background: #38bdf8;
+            color: #000;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Background grid decoration -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+    <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black pointer-events-none z-0"></div>
+
+    <!-- Header / Nav -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass-morphism rounded-full px-6 py-3">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-tr from-cyber-accent to-cyber-purple rounded-lg rotate-12 flex items-center justify-center">
+                    <span class="text-white font-bold">M</span>
+                </div>
+                <span class="font-display font-bold text-xl tracking-tight">STUDIO <span class="text-cyber-accent">M11309921</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <span class="text-cyber-accent">Article</span>
+                <span class="hover:text-cyber-accent cursor-pointer transition-colors">Insights</span>
+                <span class="hover:text-cyber-accent cursor-pointer transition-colors">History</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-20">
+        <!-- Hero Section -->
+        <header class="max-w-5xl mx-auto px-6 mb-16">
+            <div class="mb-4 inline-block px-3 py-1 rounded-full border border-cyber-accent/30 bg-cyber-accent/10 text-cyber-accent text-xs font-bold uppercase tracking-widest">
+                City Transformation Review
+            </div>
+            <h1 class="text-4xl md:text-7xl font-display font-extrabold mb-8 leading-tight">
+                【台北探店】師大夜市 <br/>
+                <span class="text-gradient">大變身！</span>
+            </h1>
+            
+            <!-- Banner Image -->
+            <div class="relative group rounded-3xl overflow-hidden mb-12 shadow-2xl shadow-cyber-accent/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                <img src='https://opal.google/board/blobs/a4b41fb1-33bd-4dbe-b222-74442da48caf' alt='師大夜市科技感橫幅' class="w-full h-[400px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div class="absolute bottom-8 left-8 z-20">
+                    <p class="text-cyber-accent font-display font-semibold text-lg tracking-widest uppercase">Visual Experience 01</p>
+                    <h2 class="text-white text-2xl font-bold">從文青聖地到微型生活圈</h2>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-12">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-accent to-cyber-pink p-0.5">
+                        <div class="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center font-bold text-xs">M113</div>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-400">Written by</p>
+                        <p class="font-bold">M11309921</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-400">Published on</p>
+                    <p class="font-display font-medium">May 24, 2024</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="max-w-4xl mx-auto px-6 leading-relaxed">
+            <div class="flex gap-10">
+                <!-- Sidebar Decor -->
+                <div class="hidden lg:block w-1 shrink-0">
+                    <div class="sticky top-40 h-64 line-accent"></div>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Intro Paragraph -->
+                    <p class="text-xl md:text-2xl text-gray-300 font-light italic leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-cyber-accent">
+                        談起台北的夜市文化，每個人心中都有一個專屬的座標。對我而言，師大夜市（或稱師大商圈）從來不只是一個填飽肚子的地方，它更像是一場關於「城市空間、法律規範與居住權益」的社會實驗。今天，我們不聊這裡的大雞排如何酥脆，而是帶著一點知識份子的思辨視角，重新審視這個曾經的「國際村」如何洗盡鉛華，成為現在的模樣。
+                    </p>
+
+                    <!-- Section 1 -->
+                    <section class="glass-morphism p-8 rounded-3xl group hover:border-cyber-accent/50 transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <span class="font-display text-4xl font-bold text-cyber-accent mr-4 opacity-50">01</span>
+                            <h3 class="text-2xl font-bold text-white">不只是吃喝！師大夜市的「文青 DNA」</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6 leading-loose">
+                            如果你曾在午後走進龍泉街的巷弄，你會發現這裡的空氣中除了油煙，還混合著一種特殊的氣味：那是陳舊書頁的塵埃，與精品手作皮革的清香。
+                        </p>
+                        <p class="text-gray-400 leading-loose">
+                            師大夜市與士林、羅東那種標準化、觀光化的夜市有著本質上的不同。它緊鄰著國立臺灣師範大學，這種「校園共生」的體質賦予了它強烈的人文氣息。因為有大量的外籍學生在語言中心進修，這裡早年孕育出了極具層次感的異國美食；也因為學生的消費力與獨到品味，街道兩旁出現了無數平價卻不落俗套的服飾店與設計小攤。與其說它是夜市，不如說它是台北具備「藝術與書卷氣息」的空間縮影。
+                        </p>
+                    </section>
+
+                    <!-- Section 2 - Bento Layout Style -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <section class="md:col-span-2 glass-morphism p-8 rounded-3xl border-l-4 border-l-cyber-purple">
+                            <div class="flex items-center mb-6">
+                                <span class="font-display text-4xl font-bold text-cyber-purple mr-4 opacity-50">02</span>
+                                <h3 class="text-2xl font-bold text-white">想當年... 這裡是國際村？</h3>
+                            </div>
+                            <p class="text-gray-400 leading-loose">
+                                追溯師大夜市的歷史，就像在閱讀一部微縮的台北近代史。1960 年代，它最初只是服務在地居民與師大師生的路邊小吃攤。1987 年的攤販重整後，商圈開始向店面化轉型。到了 1990 至 2000 年代，隨著捷運台電大樓站的開通，這裡進入了「大擴張時代」。
+                            </p>
+                        </section>
+                        <div class="bg-gradient-to-br from-cyber-purple/20 to-cyber-pink/20 p-8 rounded-3xl border border-white/5">
+                            <h4 class="text-cyber-accent font-bold mb-4">全台異國料理之冠</h4>
+                            <p class="text-sm text-gray-300">
+                                當時的師大夜市是全台灣異國料理密度最高的地方，從道地的美式漢堡、義大利麵到神秘的北非料理，應有盡有。
+                            </p>
+                        </div>
+                        <div class="bg-gradient-to-br from-cyber-dark to-black p-8 rounded-3xl border border-white/10 shadow-inner">
+                            <h4 class="text-cyber-pink font-bold mb-4">瘋狂擴張期</h4>
+                            <p class="text-sm text-gray-300">
+                                原本幾十家的店鋪規模，在短短幾年內暴增到近 700 家，形成了一個微型的全球化村落。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 - Critical Dispute -->
+                    <section class="relative overflow-hidden glass-morphism p-8 rounded-3xl border border-cyber-pink/30 shadow-lg shadow-cyber-pink/5">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-cyber-pink/20 blur-3xl rounded-full"></div>
+                        <div class="flex items-center mb-6">
+                            <span class="font-display text-4xl font-bold text-cyber-pink mr-4 opacity-50">03</span>
+                            <h3 class="text-2xl font-bold text-white">那一年的「巷弄大戰」：8 公尺的距離有多難？</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="text-gray-400 leading-loose">
+                                然而，過度的繁榮往往埋下了崩解的種子。當商圈的商業夢入侵了原本安靜的住宅區泰順街、雲和街，居民與商家的邊界開始模糊。
+                            </p>
+                            <div class="my-8 p-6 bg-cyber-black rounded-xl border border-white/10 italic">
+                                <p class="text-cyber-accent font-semibold mb-2">法律核心問題：</p>
+                                <p class="text-lg">「住宅區巷道寬度需達 8 公尺，方可開設餐飲業。」</p>
+                            </div>
+                            <p class="text-gray-400 leading-loose">
+                                這對師大商圈來說簡直是毀滅性的打擊，因為這裡多數巷弄僅有 6 公尺寬。這是一場典型的「居住品質 vs. 商業利益」的博弈，最終在市府的強硬執法下，無數巷弄小店熄燈，商圈範圍也從「入侵住宅區」撤退回了「主要幹道」。
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2 space-y-6">
+                            <div class="flex items-center">
+                                <span class="font-display text-4xl font-bold text-cyber-accent mr-4 opacity-50">04</span>
+                                <h3 class="text-2xl font-bold text-white">過氣了？還是變高級了？</h3>
+                            </div>
+                            <p class="text-gray-400 leading-loose">
+                                爭議落幕後，師大夜市迎來了長達十年的「冷卻期」。
+                                現在走在師大路，大眾的看法呈現出極有趣的兩極化。懷舊的人感嘆這裡「沒落了」，但另一派人卻認為，師大商圈終於「回歸平靜」了。
+                            </p>
+                        </div>
+                        <div class="glass-morphism p-6 rounded-3xl border-t border-cyber-accent/30 flex flex-col justify-center">
+                            <h4 class="text-white font-bold mb-4 border-b border-white/10 pb-2">元老級神店</h4>
+                            <ul class="text-sm space-y-3 text-cyber-accent">
+                                <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyber-accent mr-2"></span> 燈籠滷味</li>
+                                <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyber-purple mr-2"></span> 師園鹽酥雞</li>
+                                <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyber-pink mr-2"></span> 許記生煎包</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section 5 - Conclusion -->
+                    <section class="relative bg-gradient-to-tr from-cyber-dark to-cyber-black p-10 rounded-[40px] border border-white/10 overflow-hidden shadow-2xl">
+                        <div class="absolute bottom-0 right-0 opacity-10 font-display font-black text-9xl -mb-10 -mr-6">FUTURE</div>
+                        <div class="relative z-10">
+                            <div class="flex items-center mb-8">
+                                <span class="font-display text-4xl font-bold text-white mr-4 opacity-50">05</span>
+                                <h3 class="text-3xl font-bold text-gradient">未來預言：走向精緻生活！</h3>
+                            </div>
+                            <p class="text-gray-300 leading-loose mb-8 text-lg">
+                                展望未來，師大夜市正在經歷一場痛苦卻必要的「瘦身轉型」。
+                                未來的發展趨勢將不再追求流量與觀光人數的堆疊，而是朝著「低油煙、高美感」的方向前行。零售業、文創工作室、精品美甲與提供外帶的小食將成為主流。
+                            </p>
+                            <p class="text-gray-300 leading-loose text-lg">
+                                從一個爆紅的「國際觀光聖地」，退回「社區後花園」，這或許不是沒落，而是一種更健康的生存形態。師大商圈正在學習如何與鄰舍握手言和，在商業的喧囂與居住的安寧之間，尋找那條最難卻也最珍貴的動態平衡線。
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+
+        <!-- Final CTA/Note -->
+        <footer class="max-w-4xl mx-auto px-6 mt-20 text-center">
+            <div class="inline-block p-1 rounded-full bg-gradient-to-r from-cyber-accent via-cyber-purple to-cyber-pink">
+                <div class="px-8 py-3 rounded-full bg-cyber-black flex items-center space-x-3">
+                    <span class="text-sm font-medium">下次造訪師大，試著放下對「夜市」的刻板想像。</span>
+                </div>
+            </div>
+            <p class="mt-12 text-gray-500 font-display text-xs tracking-[0.3em] uppercase">Refining Urban Culture • M11309921</p>
+        </footer>
+    </main>
+
+    <!-- Interactive Elements -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-12 h-12 rounded-full glass-morphism flex items-center justify-center border border-cyber-accent/30 text-cyber-accent hover:bg-cyber-accent hover:text-white transition-all duration-300 shadow-lg shadow-cyber-accent/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[60]">
+        <div id="progress" class="h-full bg-gradient-to-r from-cyber-accent via-cyber-purple to-cyber-pink w-0 transition-all duration-150"></div>
+    </div>
+
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        });
+
+        // Hover animation logic for cards
+        const cards = document.querySelectorAll('.glass-morphism');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
